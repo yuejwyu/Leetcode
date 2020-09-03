@@ -19,7 +19,7 @@ public class MyHashMap<K, V> {
 
         public V getValue() {
             return value;
-        } ////////////////////////////////////////////////// need no synchronized ????
+        }
 
         public void setValue(V value) {
             this.value = value;
@@ -35,14 +35,14 @@ public class MyHashMap<K, V> {
     private float loadFactor;
 
     public MyHashMap() {
-        this(DEFAULT_CAPACITY, DEFAULT_LOAD_FACTOR); ///////////////////////////////////////// !!!!!!!!!!!!!
+        this(DEFAULT_CAPACITY, DEFAULT_LOAD_FACTOR);
     }
 
     public MyHashMap(int capacity, float loadFactor) {
         if (capacity <= 0) {
             throw new IllegalArgumentException("Capacity must be positive!");
         }
-        this.array = (Node<K, V>[]) (new Node[capacity]); ///////////////////////////////////// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ???
+        this.array = (Node<K, V>[]) (new Node[capacity]);
         this.size = 0;
         this.loadFactor = loadFactor;
     }
@@ -85,7 +85,7 @@ public class MyHashMap<K, V> {
         return false;
     }
 
-    public synchronized V get(K key) { /////////////////////////////////////////////// why synchronized ?
+    public synchronized V get(K key) {
         int index = getIndex(key);
         Node<K, V> node = array[index];
         while (node != null) {
@@ -109,7 +109,7 @@ public class MyHashMap<K, V> {
             }
             node = node.next;
         }
-        Node<K, V> newNode = new Node<K, V>(key, value); /////////////////////////////////////////////////////////////// ???
+        Node<K, V> newNode = new Node<K, V>(key, value);
         newNode.next = head;
         array[index] = newNode;
         size++;
