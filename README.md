@@ -1,2 +1,2 @@
 # Leetcode
-Just solutions to some interesting leetcode problem
+Just solutions to some interesting leetcode problems
