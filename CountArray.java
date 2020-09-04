@@ -2,7 +2,7 @@ package Laicode;
 
 import java.util.*;
 
-public class Solution {
+public class CountArray {
   // method1: mergesort
   public int[] countArray(int[] array) {
     int[] index = new int[array.length];
