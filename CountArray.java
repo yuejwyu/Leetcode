@@ -48,6 +48,7 @@ public class Solution {
     }
   }
   
+  // -------------------------------------------------------------------------
   //method2: segment tree
   public List<Integer> countSmaller(int[] nums) {
         TreeSet<Integer> s = new TreeSet<>();
