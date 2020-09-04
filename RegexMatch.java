@@ -11,6 +11,7 @@ public class RegexMatch {
         }
         
         if (visited[i][j]) return false;
+        visited[i][j] = true;
         
         if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
             if (isMatch(s, p, i, j + 2, visited)) return true;
@@ -24,9 +25,7 @@ public class RegexMatch {
                 if (p.charAt(j) == s.charAt(i) && isMatch(s, p, i + 1, j + 1, visited)) return true;
             }
         }
-        
-        visited[i][j] = true;
-        
+                
         return false;
     }
 }
