@@ -2,7 +2,6 @@ package Laicode;
 
 public class RestoreIP {
   public List<String> Restore(String ip) {
-    // Write your solution here
     List<String> res = new ArrayList<>();
     if (ip == null) return res;
     helper(res, ip, new int[4], 0, 0);
